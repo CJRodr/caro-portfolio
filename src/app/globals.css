@@ -1,26 +1,42 @@
-@import "tailwindcss";
+/* src/app/globals.css */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme tokens (for shadcn + dark cyber look) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 222.2 84% 4%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 188 100% 60%; /* cyan */
+  --primary-foreground: 222.2 84% 4%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 188 100% 60%;
+  --accent-foreground: 222.2 84% 4%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 188 100% 60%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: 222.2 84% 4%;
+  --foreground: 210 40% 98%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
